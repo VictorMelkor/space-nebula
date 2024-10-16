@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'example.apps.ExampleConfig'
+    'fotografias.apps.FotografiasConfig',
+    'usuarios.apps.UsuariosConfig'
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'example/static')
+    os.path.join(BASE_DIR, 'fotografias/static')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -137,3 +138,11 @@ MEDIA_URL = 'media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# messages
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'success',
+}

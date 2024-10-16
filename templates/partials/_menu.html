@@ -2,6 +2,7 @@
 <div class="pagina-inicial">
     <header class="cabecalho">
         <img src="{% static '/assets/logo/Logo(3).png' %}" alt="Logo da Space Nebulas" />
+        {% include 'partials/_alertas.html' %}
         <div class="cabecalho__busca">
             <div class="busca__fundo">
                 <form action="{% url 'buscar' %}">
@@ -18,8 +19,8 @@
         <section class="menu-lateral">
             <nav class="menu-lateral__navegacao">
                 <a href="{% url 'index' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
-                <a href="#"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Mais vistas</a>
-                <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Novas</a>
-                <a href="#"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Surpreenda-me</a>
+                <a href="{% url 'login' %}"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Login </a>
+                <a href="{% url 'cadastro' %}"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Cadastro </a>
+                <a href="{% url 'logout' %}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Logout </a>
             </nav>
         </section>
