@@ -1,0 +1,54 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+            <section class="conteudo">
+                <section class="banner">
+                    <img class="banner__imagem" src="{% static 'assets/imagens/Banner(2).png' %}" alt="banner Alura Space">
+                    <h1 class="banner__titulo"> A galeria mais completa de fotos do espaço!</h1>
+                </section>
+                <section class="tags">
+                    <p class="tags__titulo">Busque por tags:</p>
+                    <ul class="tags__lista">
+                        <li class="tags__tag"><a href="{% url 'filtro' 'NEBULOSA' %}" class="btn" style="color: #c9c9c9;">Nebulosas</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'ESTRELA' %}" class="btn" style="color: #c9c9c9;">Estrelas</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'GALÁXIA' %}" class="btn" style="color: #c9c9c9;">Galáxias</a></li>
+                        <li class="tags__tag"><a href="{% url 'filtro' 'PLANETA' %}" class="btn" style="color: #c9c9c9;">Planetas</a></li>
+                    </ul>
+                </section>
+                <section class="galeria">
+                    <div class="cards">
+                        <h2 class="cards__titulo">Navegue pela galeria</h2>
+                        <ul class="cards__lista">
+                            {% if cards %}
+                            {% for fotografia in cards %}
+                            <li class="card">
+                                <a href="{% url 'imagem' fotografia.id %}">
+                                {% if fotografia.foto %}
+                                    <img class="card__imagem" src="{{ fotografia.foto }}" alt="foto">
+                                {% else %}
+                                    <img class="card__imagem" src="{% static 'assets/imagens/galeria/not-found.png' %}" alt="foto">
+                                    <p>Sem URL de imagem disponível.</p>
+                                {% endif %}
+                                </a>
+                                <span class="card__tag">{{fotografia.categoria}}</span>
+                                <div class="card__info">
+                                    <p class="card__titulo">{{fotografia.nome}}</p>
+                                    <div class="card__texto">
+                                        <p class="card__descricao">{{fotografia.legenda}}</p>
+                                        <span>
+                                            <img src="{% static 'assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            {% else %}
+                                <p>Nenhuma fotografia encontrada.</p>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+{% endblock %}

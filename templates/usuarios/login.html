@@ -1,0 +1,41 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+            <section class="galeria" style="margin-left: 5em">
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        {% for field in form.visible_fields %}
+                        <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
+                            <label for="{{ field.id_for_label }}" style="color:#D9D9D9; margin-bottom: 5px;">{{field.label}}</label>
+                            {{ field }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success col-12" style="padding: top 5px;">Logar</button>
+                    </div>
+                    <br><br>
+                    <div align="center" >
+                        <div align="center">
+                            <main>
+                                <h1 class="github-title" style="color: #D9D9D9; margin-bottom: -0.25rem;">ou entre com o GitHub</h1>
+                                <div class="social-media" align="center">
+                                    <a href="http://localhost:8000/accounts/github/login/?process=login">
+                                        <img src="{% static 'assets/ícones/1x/github.svg' %}" alt="Ícone para realizar a autenticação com o GitHub" class="social-media-icon">
+                                        <p class="github-text" style="color: #7B78E5; font-weight: bold; text-align: center; margin-top: -0.25rem;">GitHub</p>
+                                    </a>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </form>
+                
+                
+            </section>
+        </main>
+    </div>
+</body>
+{% endblock %}
+
