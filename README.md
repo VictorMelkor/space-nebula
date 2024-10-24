@@ -1,32 +1,17 @@
-# 🌌 SPACE NEBULAS V.2
+# 🌌 SPACE NEBULAS V.5
 
-**Space Nebulas** é um projeto desenvolvido para fins de estudo de Python, utilizando o Framework Django, e uma introdução a HTML e CSS.
+**Space Nebulas** é um projeto desenvolvido com o objetivo de aprofundar conhecimentos em Python, utilizando o Framework Django, e introduzir conceitos de HTML e CSS.
 
-A primeira versão foi disponibilizada em produção em [🌐 space-nebula.vercel.app](https://space-nebula.vercel.app/).
-
----
-
-## 🚀 Novidades na V.2
-
-Nesta nova versão, foram implementadas diversas novas funções no backend:
-
-- **✨ Implementação de Painel ADMIN**
-- **👤 Possibilidade de criação de usuários**
-- **🔑 Autenticação de usuários registrados**
-- **🔍 Funcionamento dos filtros e da função de busca**
-- **🖼️ Inclusão, edição e remoção de imagens pelos usuários (CRUD)**
-- **☁️ Persistência das imagens em diversos ambientes de teste por meio do S3 da AWS**
+A primeira versão foi lançada em produção em [🌐 space-nebula.vercel.app](https://space-nebula.vercel.app/).
 
 ---
 
-## 🔜 Próximos passos
+## 🚀 Recursos na V.5
 
-- Melhorar a aparência e a experiência do usuário
-- Implementar novas funcionalidades
-- Colocar a nova versão em produção
+Nesta versão, foram implementados diversos recursos no backend, otimizando a experiência do usuário e ampliando as funcionalidades:
 
----
-
-### Agradecimentos
-
-Agradecemos a todos que contribuíram para o desenvolvimento deste projeto!
+- **🔑 Autenticação de usuários**: Implementação de autenticação segura utilizando OAuth 2.0 com login via GitHub.
+- **🖼️ Gestão de Imagens (CRUD)**: Permite que usuários incluam, editem e removam imagens com facilidade.
+- **👤 Criação de usuários**: Facilidade na criação de novos usuários.
+- **☁️ Armazenamento em nuvem**: Persistência de imagens em diversos ambientes de teste através do S3 da AWS.
+- **💾 Banco de dados MySQL**: Im
