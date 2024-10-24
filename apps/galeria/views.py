@@ -8,6 +8,11 @@ from django.db.models import Q
 from datetime import datetime
 
 
+from django.http import JsonResponse
+
+def meu_endpoint(request):
+    return JsonResponse({"mensagem": "Sucesso!"})
+
 
 def index(request):
     
